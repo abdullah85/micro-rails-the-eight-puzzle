@@ -5,9 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
+* Ruby version -
+    Built with ruby 3.2.0
+  
+* System dependencies 
 
 * Configuration
 
