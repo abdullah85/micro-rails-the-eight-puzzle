@@ -1,0 +1,51 @@
+<h1>Eight Puzzles Index</h1>
+
+<% i = 1 %>
+<% @puzzles.each do |puzzle| %>
+<ul style="list-style-type: none;">
+    <li>
+        <table  style="border: none; padding: 0px;">
+            <tr>
+                <td style="font-size: 17pt; font-weight: 900; border: none; padding:0px"><%= puzzle[:title] %></td>
+            </tr>
+            <tr>
+                <td  style="border:none; padding:0px"><%= puzzle[:created].to_fs(:long) %></td>
+            </tr>
+        </table>
+
+        <!-- Now, for the data -->
+        <br />
+        <table>
+            <tr>
+                <th>Initial state</th>
+                <th>Current state</th>
+                <th>Goal state</th>
+            </tr>
+            <tr>
+                <td><%= puzzle[:initial_state] %></td>
+                <td><%= puzzle[:current_state] %></td>
+                <td><%= puzzle[:goal_state] %></td>
+            </tr>
+        </table>
+        <br>
+        <!-- Now, for the links  -->
+        <table style="border: none;">
+            <tr>
+                <td style="border: none;"><%= link_to('Show', eight_puzzle_path(i)) %></td>
+                <td style="border: none;">Edit</td>
+                <td style="border: none;">Delete</td>
+            </tr>
+        </table>
+        <hr>
+    </li>
+</ul>
+<% i = i + 1 %>
+<% end %>
+
+<!-- INDEX LOOKS GOOD -->
+
+<!-- Similarly, we need to build out the rest of the viewd for
+a) Show (view component only)
+b) new / create (in controller)
+d) edit / update (in controller only)
+f) delete / destroy (in controller only) -->
